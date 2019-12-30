@@ -1,0 +1,22 @@
+package demo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class rrrr {
+
+	public static void main(String[] args) throws Exception 
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\trushali\\Chrome driver\\chromedriver.exe");
+		ChromeDriver def = new ChromeDriver();
+		def.get("https://opensource-demo.orangehrmlive.com/");
+		def.findElement(By.name("txtUsername")).sendKeys("Admin");
+		def.findElement(By.id("txtPassword")).sendKeys("admin123");
+		def.findElement(By.id("btnLogin")).click();
+		def.findElement(By.id("welcome")).click();
+		Thread.sleep(5000);
+		def.findElementByXPath("//*[@id=\"welcome-menu\"]/ul/li[2]/a").click();
+	
+	}
+
+}
